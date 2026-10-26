@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#eee6f1" />
+<meta name="description" content="达妮娅二创区：视频、同人文、同人游戏、二创日报、表情包、工具与桌宠。保留原投稿入口与作者署名。" />
+<title>二创区 · До свидания</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='%23b5a5da'/><ellipse cx='50' cy='52' rx='46' ry='13' fill='none' stroke='%23c9a9d6' stroke-width='6' transform='rotate(16 50 52)'/></svg>" />
+<link rel="stylesheet" href="assets/css/base.css" />
+<link rel="stylesheet" href="assets/css/fanworks.css" />
+</head>
+<body>
+<div class="world">
+  <div class="page-wash" aria-hidden="true"></div>
+  <div class="bubbles" id="bubbles" aria-hidden="true"></div>
+  <div class="page-grain" aria-hidden="true"></div>
+
+  <header class="header">
+    <a class="brand" href="./" aria-label="До свидания · 直到下次再见 · 首页">
+      <svg class="brand-symbol" viewBox="0 0 100 72" aria-hidden="true">
+        <g stroke-linejoin="round">
+          <circle cx="51" cy="37" r="16" fill="#b5a5da" stroke="#6c83cf" stroke-width="3"/>
+          <circle cx="51" cy="37" r="12.5" fill="none" stroke="#faf2d9" stroke-width="3"/>
+          <path d="M48 25 60 2 55 29" fill="#e6e5f4" stroke="#718bdb" stroke-width="3"/>
+          <ellipse cx="50" cy="38" rx="38" ry="11" transform="rotate(16 50 38)" fill="none" stroke="#c9a9d6" stroke-width="3"/>
+        </g>
+      </svg>
+      <span class="brand-name">До свидания<small>直到下次再见 · DENIA SHRINE</small></span>
+    </a>
+    <nav aria-label="站点导航">
+      <a href="./">首页</a>
+      <a href="gallery.html">相册画廊</a>
+      <a href="fanworks.html" aria-current="page">二创区</a>
+      <a href="pet.html">互动区</a>
+      <a href="daily/index.html">日报</a>
+    </nav>
+    <div class="header-side">
+      <span class="status-badge" id="status"><span class="dot"></span> 正在连接</span>
+    </div>
+  </header>
+
+  <main class="fw-main" id="main">
+    <section class="fw-hero">
+      <p class="fw-eyebrow">FAN CREATIONS</p>
+      <h1>二创区 · <em>大家笔下的她</em></h1>
+      <p class="fw-subtitle">从一段影像到一首歌，收集大家笔下的达妮娅。所有条目保留原投稿入口。</p>
+      <p class="fw-local" id="source-note"></p>
+    </section>
+
+    <details class="fw-manager" id="manager">
+      <summary><span data-icon="wrench"></span> 收录管理台 · 导入 / 导出 / 新增</summary>
+      <p>收录数据默认随站发布；开启后端时保存到服务器，纯静态部署时保存在你的浏览器（localStorage），并可导出 JSON 交给整理者合并。</p>
+      <div class="fw-actions">
+        <button class="fw-primary" id="btn-new"><span data-icon="plus"></span> 新增收录</button>
+        <button id="btn-export"><span data-icon="download"></span> 导出 JSON</button>
+        <button id="btn-import"><span data-icon="upload"></span> 导入 JSON</button>
+        <button id="btn-reset" class="fw-delete">恢复随站种子数据</button>
+        <input type="file" id="import-file" accept="application/json,.json" hidden />
+      </div>
+      <p class="fw-notice" id="manager-msg" role="status"></p>
+      <p class="fw-shortcuts">快捷键：<kbd>/</kbd> 聚焦搜索 · <kbd>Esc</kbd> 关闭弹窗 · 卡片标签可点击筛选。</p>
+    </details>
+
+    <section class="fw-daily" id="featured" aria-label="精选推荐"></section>
+
+    <section aria-label="分类">
+      <div class="fw-section-head">
+        <div><p class="fw-eyebrow">CATEGORIES</p><h2>按类型翻找</h2></div>
+      </div>
+      <div class="fw-categories" id="categories"></div>
+    </section>
+
+    <section id="fw-library" aria-label="收录库">
+      <div class="fw-section-head">
+        <div><p class="fw-eyebrow">LIBRARY</p><h2>收录库</h2><p id="result-count" class="fw-heading-subtitle"></p></div>
+      </div>
+      <div class="fw-tagcloud" id="tagcloud" aria-label="热门标签"></div>
+      <div class="fw-toolbar">
+        <label class="fw-search"><span data-icon="search"></span><input id="q" type="search" placeholder="搜索标题 / 作者 / 标签 / 摘要…" aria-label="搜索收录" /></label>
+        <select id="access" aria-label="按获取方式筛选">
+          <option value="all">全部获取方式</option><option value="free">免费</option><option value="paid">购买渠道</option><option value="open">开源</option>
+        </select>
+        <select id="sort" aria-label="排序">
+          <option value="new">最新收录</option><option value="title">标题（拼音/字序）</option><option value="kind">类型</option>
+        </select>
+        <button class="fw-pill" id="fav-only" aria-pressed="false"><span data-icon="heart"></span> 只看收藏</button>
+      </div>
+      <p class="fw-result" id="fw-result" role="status"></p>
+      <div class="fw-grid" id="grid"></div>
+      <div class="fw-pagination" id="pagination"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="foot-mark">Dasvidaniya</span>
+    <span>收录如有遗漏或署名错误，请经管理台导出 JSON 反馈给整理者。</span>
+    <span class="foot-links"><a href="./">首页</a><a href="gallery.html">画廊</a><a href="pet.html">桌宠</a></span>
+  </footer>
+</div>
+<script type="module" src="assets/js/fanworks.js"></script>
+</body>
+</html>

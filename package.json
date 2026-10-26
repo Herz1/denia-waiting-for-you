@@ -1,0 +1,15 @@
+{
+  "name": "denia-waiting-for-you",
+  "version": "2.0.0",
+  "description": "До свидания · 直到下次再见 —— 达妮娅（鸣潮）同人应援站：等待计数、蛋糕仪式、相册画廊、二创区、网页桌宠与聊天。",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node --watch server/server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}

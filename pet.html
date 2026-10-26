@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#eee6f1" />
+<meta name="description" content="虚质空间 · 和娅娅一起：网页桌宠、聊天、表情包、吹泡泡小游戏。桌宠表情均取自真人绘制的同人图。" />
+<title>互动区 · 和娅娅待一会儿 · До свидания</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='%23b5a5da'/><ellipse cx='50' cy='52' rx='46' ry='13' fill='none' stroke='%23c9a9d6' stroke-width='6' transform='rotate(16 50 52)'/></svg>" />
+<link rel="stylesheet" href="assets/css/base.css" />
+<link rel="stylesheet" href="assets/css/pet.css" />
+<link rel="stylesheet" href="assets/css/petpage.css" />
+</head>
+<body>
+<div class="world">
+  <div class="page-wash" aria-hidden="true"></div>
+  <div class="bubbles" id="bubbles" aria-hidden="true"></div>
+  <div class="page-grain" aria-hidden="true"></div>
+
+  <header class="header">
+    <a class="brand" href="./" aria-label="До свидания · 直到下次再见 · 首页">
+      <svg class="brand-symbol" viewBox="0 0 100 72" aria-hidden="true">
+        <g stroke-linejoin="round">
+          <circle cx="51" cy="37" r="16" fill="#b5a5da" stroke="#6c83cf" stroke-width="3"/>
+          <circle cx="51" cy="37" r="12.5" fill="none" stroke="#faf2d9" stroke-width="3"/>
+          <path d="M48 25 60 2 55 29" fill="#e6e5f4" stroke="#718bdb" stroke-width="3"/>
+          <ellipse cx="50" cy="38" rx="38" ry="11" transform="rotate(16 50 38)" fill="none" stroke="#c9a9d6" stroke-width="3"/>
+        </g>
+      </svg>
+      <span class="brand-name">До свидания<small>直到下次再见 · DENIA SHRINE</small></span>
+    </a>
+    <nav aria-label="站点导航">
+      <a href="./">首页</a>
+      <a href="gallery.html">相册画廊</a>
+      <a href="fanworks.html">二创区</a>
+      <a href="pet.html" aria-current="page">互动区</a>
+      <a href="daily/index.html">日报</a>
+    </nav>
+    <div class="header-side">
+      <span class="status-badge" id="status"><span class="dot"></span> 正在连接</span>
+      <span class="cake-chip" id="cake-chip" title="全站累计留下的蛋糕"></span>
+    </div>
+  </header>
+
+  <main class="main-wrap" id="main">
+    <section class="petpage-hero">
+      <div class="eyebrow"><span></span> IMAGINARY SPACE</div>
+      <h1>虚质空间 · <em>和娅娅待一会儿</em></h1>
+      <p class="sub">把等待变成小小的日常：拖她、摸她、喂她蛋糕，和她聊天、贴图、吹泡泡。她的每一个表情，都来自大家一笔一笔画下的她。</p>
+      <div class="pet-actions">
+        <button class="pill" id="act-chat"><span data-icon="chat"></span> 和娅娅聊天</button>
+        <button class="pill" id="act-cake"><span data-icon="cake"></span> 喂一块蛋糕</button>
+        <button class="pill" id="act-bubble"><span data-icon="bubble"></span> 吹一个泡泡</button>
+        <button class="pill" id="act-pat"><span data-icon="paw"></span> 摸摸头</button>
+        <span class="affection-chip" id="affection"><span data-icon="heart"></span> 好感 0</span>
+      </div>
+    </section>
+
+    <section class="desk" id="desk" aria-label="娅娅的活动空间">
+      <div class="desk-hint">提示：可以直接抓住娅娅拖来拖去；松手时用力一点，她会滑出去。</div>
+    </section>
+
+    <section class="guide" aria-label="互动说明">
+      <div class="card">
+        <h3><span data-icon="paw"></span> 摸摸与拖拽</h3>
+        <p>单击娅娅 = 摸摸头（加好感）；按住拖动 = 搬家，松手带一点速度她会被抛出去。75 秒不理她，她会抱着蛋糕架睡着。</p>
+      </div>
+      <div class="card">
+        <h3><span data-icon="chat"></span> 聊天与记忆</h3>
+        <p>告诉她「我叫某某」，她会记住你；说「蛋糕」「等了几天」「泡泡」会有不同的回应。深夜 23 点后她也会先睡为敬。</p>
+      </div>
+      <div class="card">
+        <h3><span data-icon="image"></span> 表情包与贴图</h3>
+        <p id="stickers-note">聊天框点「表情」发送五枚小表情；也支持粘贴（Ctrl/⌘+V）或拖入图片给她看，她会好好收起来。</p>
+      </div>
+      <div class="card">
+        <h3><span data-icon="bubble"></span> 吹泡泡小游戏</h3>
+        <p>点「吹一个泡泡」，或直接说「泡泡」。戳破泡泡会掉出一条关于她的小知识，连戳有 combo。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="foot-mark">Dasvidaniya</span>
+    <span>桌宠表情取自真人绘制同人图，署名见相册画廊。</span>
+    <span class="foot-links"><a href="./">首页</a><a href="gallery.html">画廊</a><a href="fanworks.html">二创区</a></span>
+  </footer>
+
+  <div class="pet-stage" id="pet-stage" aria-label="桌宠区域"></div>
+</div>
+<script type="module" src="assets/js/pet-page.js"></script>
+</body>
+</html>

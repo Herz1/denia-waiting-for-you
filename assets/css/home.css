@@ -1,0 +1,51 @@
+/* ============ 首页 ============ */
+.home-main { position: relative; flex: 1; display: flex; flex-direction: column; min-height: 0; }
+.scene { position: absolute; inset: 0; z-index: -2; background: #d6dbea; }
+.scene picture, .scene img { width: 100%; height: 100%; object-fit: cover; object-position: 66% 40%; display: block; }
+.scene-wash { position: absolute; inset: 0; background:
+  linear-gradient(90deg, rgba(244,240,246,.97) 0%, rgba(245,238,245,.9) 30%, rgba(240,233,244,.42) 56%, rgba(240,233,244,.12) 78%),
+  linear-gradient(0deg, rgba(228,222,236,.97), rgba(227,221,235,.35) 24%, transparent 46%); }
+.scene-grain { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(248,242,247,.4), transparent 19%); pointer-events: none; }
+
+.hero-copy { position: relative; z-index: 1; padding: clamp(20px, 5vh, 64px) 6.7% 0; max-width: 640px; }
+.hero-copy .handwritten { margin-top: 22px; }
+.waiting-title { font-family: var(--serif); font-size: clamp(42px, 4.6vw, 72px); font-weight: 500; letter-spacing: 5px; line-height: 1.45; margin: 12px 0 14px; text-shadow: 0 1px 10px #fff3; }
+.waiting-count { display: inline-grid; place-items: center; margin: 0 6px; }
+.waiting-count strong { font: 700 clamp(46px, 5vw, 80px)/1 Georgia, serif; color: #915576; background: linear-gradient(180deg, #a4678d, #7d4f74); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.waiting-count span { font-size: 15px; letter-spacing: 4px; color: #9c7f97; margin-top: 2px; }
+.lead { font-size: 13.5px; line-height: 2; color: #7d6b88; max-width: 460px; letter-spacing: .5px; }
+
+.ritual { display: flex; align-items: center; gap: 18px; margin-top: 26px; flex-wrap: wrap; }
+.cake-button { display: inline-flex; align-items: center; gap: 9px; background: #ffffffd9; border: 1px solid #fff; border-radius: 26px;
+  padding: 13px 22px; font-size: 13px; letter-spacing: 1.5px; color: #8d5672; box-shadow: 0 6px 24px #69566f1f; transition: .25s; }
+.cake-button:hover { transform: translateY(-2px); background: #fff; color: #a05179; box-shadow: 0 10px 30px #69566f2b; }
+.cake-button .button-star { color: #d3a9c0; }
+.cake-button:active { transform: scale(.97); }
+.cake-shelf { display: flex; align-items: center; gap: 10px; font-size: 11px; letter-spacing: 1px; color: #8d7a97; }
+.cake-shelf .cakes { display: flex; gap: 3px; }
+.cake-shelf .cakes i { width: 15px; height: 13px; background: #f3d9e2; border-radius: 3px 3px 2px 2px; box-shadow: inset 0 4px 0 #fff, inset 0 -3px 0 #d9a1b4; animation: cake-in .4s cubic-bezier(.34,1.56,.64,1); }
+@keyframes cake-in { from { transform: scale(0) translateY(6px); } }
+
+.portals { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin: 34px 6.7% 30px; position: relative; z-index: 1; }
+.portal { display: flex; align-items: center; gap: 14px; padding: 18px 20px; background: #ffffffb8; border: 1px solid #fff; border-radius: 18px;
+  box-shadow: var(--shadow); backdrop-filter: blur(10px); transition: .25s; }
+.portal:hover { transform: translateY(-3px); background: #fffd; box-shadow: 0 14px 36px #69566f24; }
+.portal-icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 14px; background: linear-gradient(135deg, #efe3f1, #e3d8ec); color: #94719c; flex: none; }
+.portal small { display: block; font-size: 9px; letter-spacing: 2.5px; color: #a68fae; }
+.portal strong { display: block; font: 500 16px/1.5 var(--serif); letter-spacing: 2px; margin: 3px 0 2px; }
+.portal em { font-style: normal; font-size: 10.5px; color: #93809d; letter-spacing: .5px; }
+.portal-arrow { margin-left: auto; color: #b598bd; transition: .25s; }
+.portal:hover .portal-arrow { transform: translate(3px, -3px); color: #985b83; }
+
+.friends-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin: 0 6.7% 44px; position: relative; z-index: 1; }
+.friend-card { padding: 20px 22px; }
+.friend-card h3 { font: 500 16px var(--serif); letter-spacing: 2px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+.friend-card p { font-size: 12px; line-height: 1.9; color: #8a7795; }
+.friend-card .pill { margin-top: 12px; display: inline-block; }
+
+@media (max-width: 860px) {
+  .scene img, .scene picture { object-position: 72% 30%; }
+  .scene-wash { background: linear-gradient(0deg, rgba(240,235,244,.98) 22%, rgba(240,233,244,.72) 52%, rgba(240,233,244,.2) 82%); }
+  .hero-copy { padding-inline: 7%; }
+  .portals, .friends-strip { margin-inline: 5%; }
+}

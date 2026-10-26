@@ -1,0 +1,95 @@
+/* ============ 桌宠 · 娅娅 ============ */
+.pet-stage { position: fixed; inset: 0; pointer-events: none; z-index: 40; }
+.pet-stage > * { pointer-events: auto; }
+
+.pet { position: absolute; left: 0; top: 0; width: 132px; display: grid; justify-items: center; gap: 6px;
+  cursor: grab; user-select: none; touch-action: none; z-index: 41; transition: filter .3s; }
+.pet.grab { cursor: grabbing; }
+.pet-mini { width: 104px; }
+.pet-avatar { position: relative; width: 108px; height: 108px; border-radius: 50%; overflow: hidden;
+  border: 3px solid #fffc; box-shadow: 0 10px 30px #5b496538, inset 0 0 0 2px #fff6;
+  background: #f4edf6; animation: pet-bob 3.4s ease-in-out infinite; }
+.pet-mini .pet-avatar { width: 86px; height: 86px; }
+.pet-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 16%; transition: opacity .35s; }
+.pet-ring { position: absolute; inset: -7px; border-radius: 50%; border: 2px dashed #c9a9d688; animation: ring-spin 22s linear infinite; }
+@keyframes ring-spin { to { transform: rotate(360deg); } }
+@keyframes pet-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+.pet-shadow { width: 74px; height: 12px; border-radius: 50%; background: radial-gradient(ellipse at center, #5b496530, transparent 70%); margin-top: -2px; animation: shadow-bob 3.4s ease-in-out infinite; }
+@keyframes shadow-bob { 0%, 100% { transform: scaleX(1); opacity: .8; } 50% { transform: scaleX(.82); opacity: .5; } }
+.pet.grab .pet-avatar { animation: none; transform: scale(1.06); }
+.pet.step .pet-avatar { animation: pet-step .6s ease-in-out 2; }
+@keyframes pet-step { 0%,100% { transform: rotate(0); } 25% { transform: rotate(-4deg) translateY(-3px); } 75% { transform: rotate(4deg) translateY(-3px); } }
+
+.pet-tag { font-size: 10px; letter-spacing: 1.5px; color: #7d6b88; background: #fffb; border: 1px solid #fff; padding: 4px 10px; border-radius: 14px; backdrop-filter: blur(6px); }
+.pet-tag b { font-weight: 600; color: #985b83; }
+
+.pet-bubble { position: absolute; bottom: calc(100% + 10px); left: 50%; transform: translateX(-50%) translateY(6px) scale(.92);
+  min-width: 120px; max-width: 240px; background: #fffdf9f2; border: 1px solid #e8dcec; color: #5b4965; font-size: 12px; line-height: 1.7;
+  padding: 10px 14px; border-radius: 14px 14px 14px 4px; box-shadow: 0 8px 26px #5b496526; opacity: 0; pointer-events: none; transition: .28s cubic-bezier(.34,1.56,.64,1); }
+.pet-bubble.show { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+.pet-bubble::after { content: ""; position: absolute; left: 12px; top: 100%; width: 10px; height: 10px; background: inherit; border-right: 1px solid #e8dcec; border-bottom: 1px solid #e8dcec; transform: translateY(-6px) rotate(45deg); }
+
+.pet-zzz { position: absolute; right: -6px; top: -4px; font: italic 700 13px Georgia, serif; color: #9b86ab; opacity: 0; transition: .4s; letter-spacing: 1px; }
+.pet[data-mood="sleep"] .pet-zzz { opacity: 1; animation: zzz 2.6s ease-in-out infinite; }
+.pet[data-mood="sleep"] .pet-avatar { animation-duration: 5.2s; filter: saturate(.82) brightness(.97); }
+@keyframes zzz { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-6px) rotate(4deg); } }
+
+/* 粒子 */
+.pet-particle { position: absolute; left: 50%; top: 34%; width: 15px; height: 15px; pointer-events: none; animation: particle-fly 1.3s ease-out forwards; }
+.pet-particle::before { content: ""; position: absolute; inset: 0; }
+.pet-p-heart::before { background: #d98ba3; clip-path: path("M7.5 13.5 2.6 8.7a3.2 3.2 0 0 1 4.5-4.5l.4.4.4-.4a3.2 3.2 0 0 1 4.5 4.5Z"); }
+.pet-p-sparkle::before { background: #e8c76f; clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%); }
+.pet-p-cake::before { background: #f3d9e2; border-radius: 3px 3px 2px 2px; box-shadow: inset 0 4px 0 #fff, inset 0 -3px 0 #d9a1b4; }
+@keyframes particle-fly { 0% { transform: translate(0,0) rotate(0) scale(.6); opacity: 0; } 18% { opacity: 1; } 100% { transform: translate(var(--dx), var(--dy)) rotate(var(--r)) scale(1.15); opacity: 0; } }
+
+/* ============ 聊天面板 ============ */
+.chat-panel { position: fixed; right: 22px; bottom: 22px; width: min(380px, calc(100vw - 32px)); max-height: min(560px, 74svh);
+  display: flex; flex-direction: column; background: #fdfafff5; border: 1px solid #fff; border-radius: 20px; box-shadow: 0 18px 60px #45324b3d;
+  backdrop-filter: blur(14px); z-index: 45; overflow: hidden; transition: .3s; }
+.chat-panel.dragover { outline: 2px dashed #b696c1; outline-offset: -6px; }
+.chat-panel.collapsed { max-height: 52px; }
+.chat-panel.collapsed :is(.chat-list, .chat-form, .chat-stickers) { display: none; }
+.chat-head { display: flex; align-items: center; gap: 10px; padding: 14px 16px; border-bottom: 1px solid #eee2f0; }
+.chat-head strong { font: 500 15px var(--serif); letter-spacing: 1px; }
+.chat-sub { font-size: 10px; letter-spacing: 1.5px; color: #a08ba9; margin-right: auto; }
+.chat-collapse { padding: 6px; border-radius: 50%; }
+.chat-collapse:hover { background: #f0e6f3; }
+.chat-list { flex: 1; overflow-y: auto; padding: 16px 14px; display: flex; flex-direction: column; gap: 10px; min-height: 180px; }
+.msg { display: flex; }
+.msg .msg-body { max-width: 84%; padding: 10px 13px; border-radius: 14px; font-size: 12.5px; line-height: 1.75; }
+.msg p { overflow-wrap: anywhere; }
+.msg-user { justify-content: flex-end; }
+.msg-user .msg-body { background: #8e6e96; color: #fdf7fc; border-bottom-right-radius: 4px; }
+.msg-pet .msg-body { background: #f3ecf6; border: 1px solid #eadff0; border-bottom-left-radius: 4px; color: #5b4965; }
+.msg-img { max-width: 170px; border-radius: 10px; margin-bottom: 6px; border: 1px solid #fff; }
+.typing .msg-body { display: flex; gap: 4px; padding: 13px 15px; }
+.typing i { width: 6px; height: 6px; border-radius: 50%; background: #b39ac0; animation: typing-dot 1s infinite; }
+.typing i:nth-child(2) { animation-delay: .15s; } .typing i:nth-child(3) { animation-delay: .3s; }
+@keyframes typing-dot { 50% { transform: translateY(-4px); opacity: .5; } }
+.chat-stickers { display: flex; gap: 8px; padding: 10px 12px; border-top: 1px dashed #e5d8ea; overflow-x: auto; }
+.sticker { width: 58px; height: 58px; flex: none; border-radius: 12px; overflow: hidden; border: 1px solid #e8dcec; background: #fff; transition: .2s; }
+.sticker:hover { transform: translateY(-3px) rotate(-2deg); box-shadow: 0 6px 16px #5b496526; }
+.sticker img { width: 100%; height: 100%; object-fit: cover; }
+.chat-form { display: flex; align-items: center; gap: 6px; padding: 10px 12px; border-top: 1px solid #eee2f0; }
+.chat-tool { padding: 8px; border-radius: 10px; color: #8d7a97; }
+.chat-tool:hover { background: #f0e6f3; color: #985b83; }
+.chat-form input { flex: 1; min-width: 0; border: 1px solid #e3d6e8; background: #fff; border-radius: 20px; padding: 10px 15px; font-size: 12.5px; outline: none; }
+.chat-form input:focus { border-color: #b696c1; box-shadow: 0 0 0 3px #b696c122; }
+.chat-send { background: #8e6e96; color: #fff; border-radius: 50%; width: 38px; height: 38px; display: grid; place-items: center; flex: none; }
+.chat-send:hover { background: #795781; }
+
+/* ============ 吹泡泡小游戏 ============ */
+.bubble-field { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 30; }
+.game-bubble { pointer-events: auto; position: absolute; bottom: -140px; border-radius: 50%; border: 0;
+  background: radial-gradient(circle at 32% 28%, #ffffffee, #f7eefbff 38%, #d9c6e68c 68%, #ffffff40 100%);
+  box-shadow: inset 0 0 20px #ffffffaa, 0 6px 24px #7a65842b; cursor: pointer;
+  animation-name: game-rise; animation-timing-function: linear; animation-fill-mode: forwards; }
+.game-bubble::after { content: ""; position: absolute; left: 22%; top: 16%; width: 26%; height: 16%; border-radius: 50%; background: #ffffffcc; transform: rotate(-24deg); filter: blur(1px); }
+.game-bubble:hover { filter: brightness(1.06); }
+.game-bubble.pop { animation: none; transition: .3s; transform: scale(1.5); opacity: 0; }
+@keyframes game-rise { to { transform: translateY(-118vh) translateX(5vw); } }
+
+@media (max-width: 700px) {
+  .chat-panel { right: 10px; bottom: 10px; }
+  .pet { width: 108px; }
+}

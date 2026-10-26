@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#eee6f1" />
+<meta name="description" content="相册画廊：收藏关于达妮娅的每一种模样。手绘同人与游戏内摄影，保留作者署名与原作链接；角色图不使用 AI 生成。" />
+<title>相册画廊 · До свидания</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='%23b5a5da'/><ellipse cx='50' cy='52' rx='46' ry='13' fill='none' stroke='%23c9a9d6' stroke-width='6' transform='rotate(16 50 52)'/></svg>" />
+<link rel="stylesheet" href="assets/css/base.css" />
+<link rel="stylesheet" href="assets/css/gallery.css" />
+</head>
+<body>
+<div class="world">
+  <div class="page-wash" aria-hidden="true"></div>
+  <div class="bubbles" id="bubbles" aria-hidden="true"></div>
+  <div class="page-grain" aria-hidden="true"></div>
+
+  <header class="header">
+    <a class="brand" href="./" aria-label="До свидания · 直到下次再见 · 首页">
+      <svg class="brand-symbol" viewBox="0 0 100 72" aria-hidden="true">
+        <g stroke-linejoin="round">
+          <circle cx="51" cy="37" r="16" fill="#b5a5da" stroke="#6c83cf" stroke-width="3"/>
+          <circle cx="51" cy="37" r="12.5" fill="none" stroke="#faf2d9" stroke-width="3"/>
+          <path d="M48 25 60 2 55 29" fill="#e6e5f4" stroke="#718bdb" stroke-width="3"/>
+          <ellipse cx="50" cy="38" rx="38" ry="11" transform="rotate(16 50 38)" fill="none" stroke="#c9a9d6" stroke-width="3"/>
+        </g>
+      </svg>
+      <span class="brand-name">До свидания<small>直到下次再见 · DENIA SHRINE</small></span>
+    </a>
+    <nav aria-label="站点导航">
+      <a href="./">首页</a>
+      <a href="gallery.html" aria-current="page">相册画廊</a>
+      <a href="fanworks.html">二创区</a>
+      <a href="pet.html">互动区</a>
+      <a href="daily/index.html">日报</a>
+    </nav>
+    <div class="header-side">
+      <span class="status-badge" id="status"><span class="dot"></span> 正在连接</span>
+    </div>
+  </header>
+
+  <main class="main-wrap" id="main">
+    <section class="gal-hero">
+      <div class="eyebrow"><span></span> PHOTO GALLERY</div>
+      <h1>相册画廊 · <em>收藏她的每一种模样</em></h1>
+      <p class="sub">一台不会过期的相机：把手绘的她、镜头里的她，一页一页夹进相册。点开可以看大图与作者署名。</p>
+    </section>
+
+    <p class="gal-pledge" id="pledge"></p>
+
+    <section class="archive-camera" aria-hidden="true">
+      <div class="cam-row">
+        <span class="cam-lens"></span>
+        <span class="cam-brand">DENIA CAM<small>DO SVIDANIYA · SINCE 2026.05.20</small></span>
+        <span class="cam-params"><span>ISO 等待</span><span>f/泡泡</span><span>1/∞ s</span><span id="cam-count">-- 张</span></span>
+      </div>
+      <div class="cam-film" id="cam-film"></div>
+    </section>
+
+    <div class="gal-tabs" id="tabs" role="tablist" aria-label="相册分类"></div>
+    <div class="gal-grid" id="grid"></div>
+    <div id="extra"></div>
+  </main>
+
+  <footer class="footer">
+    <span class="foot-mark">Dasvidaniya</span>
+    <span>图片版权归原作者。本站仅作同好展示，不作商用。</span>
+    <span class="foot-links"><a href="./">首页</a><a href="fanworks.html">二创区</a><a href="pet.html">桌宠</a></span>
+  </footer>
+</div>
+<script type="module" src="assets/js/gallery.js"></script>
+</body>
+</html>

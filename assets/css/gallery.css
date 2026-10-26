@@ -1,0 +1,63 @@
+/* ============ 相册画廊 ============ */
+.gal-hero { padding: 26px 0 6px; max-width: 760px; }
+.gal-hero h1 { font: 500 clamp(32px, 3.6vw, 50px)/1.5 var(--serif); letter-spacing: 3px; }
+.gal-hero h1 em { font-style: normal; color: #ad7598; }
+.gal-hero .sub { margin-top: 10px; font-size: 13px; line-height: 2; color: #8a7795; }
+.gal-pledge { display: flex; gap: 12px; align-items: flex-start; margin: 18px 0 26px; padding: 16px 18px;
+  background: linear-gradient(115deg, #fff9, #f4e8f0b3); border: 1px solid #fff; border-radius: 16px; font-size: 12.5px; line-height: 1.9; color: #7d6b88; }
+.gal-pledge svg { color: #a384ac; margin-top: 3px; }
+
+/* 相机相册头（延续旧站 archive-camera 意象） */
+.archive-camera { position: relative; margin: 6px 0 26px; padding: 20px 24px; border-radius: 20px; overflow: hidden;
+  background: linear-gradient(140deg, #efe7f2, #e5dcec 60%, #ded4e8);
+  border: 1px solid #fff; box-shadow: var(--shadow), inset 0 0 0 1px #ffffff70; }
+.archive-camera::before { content: ""; position: absolute; inset: 8px; border: 1px dashed #c9b6d480; border-radius: 14px; pointer-events: none; }
+.cam-row { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.cam-lens { position: relative; width: 74px; height: 74px; border-radius: 50%; flex: none;
+  background: radial-gradient(circle at 34% 30%, #ffffff, #dcd0e6 45%, #b9a6c8 78%, #9d87ad 100%);
+  box-shadow: inset 0 0 0 6px #ffffff8c, inset 0 0 0 10px #cbb9d8, 0 6px 18px #6b587130; }
+.cam-lens::after { content: ""; position: absolute; left: 24%; top: 18%; width: 26%; height: 18%; border-radius: 50%; background: #ffffffd0; transform: rotate(-24deg); }
+.cam-brand { font: 15px Georgia, serif; letter-spacing: 3px; color: #7d6b88; }
+.cam-brand small { display: block; font: 9px sans-serif; letter-spacing: 2.5px; color: #a68fae; margin-top: 5px; }
+.cam-params { margin-left: auto; display: flex; gap: 10px; font-size: 10px; letter-spacing: 1.5px; color: #93809d; }
+.cam-params span { background: #fffb; border: 1px solid #fff; border-radius: 12px; padding: 6px 10px; }
+.cam-film { display: flex; gap: 6px; margin-top: 16px; }
+.cam-film i { width: 16px; height: 11px; border-radius: 3px; background: #ffffff90; box-shadow: inset 0 0 0 1px #d5c6dd; }
+.cam-film i:nth-child(4n) { margin-right: 12px; }
+
+/* 分类页签 */
+.gal-tabs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 22px; }
+.gal-tabs .pill { display: inline-flex; gap: 8px; align-items: center; }
+
+/* 瀑布流 */
+.gal-grid { columns: 3 260px; column-gap: 18px; margin-bottom: 34px; }
+.gal-item { break-inside: avoid; margin-bottom: 18px; position: relative; background: #fffd; border: 1px solid #fff; border-radius: 14px;
+  padding: 12px 12px 14px; box-shadow: var(--shadow); transition: transform .25s, box-shadow .25s; }
+.gal-item:hover { transform: translateY(-4px) rotate(-.4deg); box-shadow: 0 16px 40px #69566f26; }
+.gal-item::before { content: ""; position: absolute; left: 50%; top: -9px; width: 74px; height: 18px; transform: translateX(-50%) rotate(-2deg);
+  background: #e8dcead9; box-shadow: 0 2px 5px #6b587120; border-radius: 2px; }
+.gal-item img { width: 100%; border-radius: 9px; background: #eee6f1; cursor: zoom-in; }
+.gal-cap { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-top: 10px; }
+.gal-cap strong { font: 500 14.5px/1.5 var(--serif); letter-spacing: 1px; display: block; }
+.gal-cap .artist { font-size: 11px; color: #9a889f; margin-top: 3px; display: block; }
+.gal-badge { flex: none; font-size: 9.5px; letter-spacing: 1px; color: #7c9a82; background: #eef5ee; border: 1px solid #d8e6d9; border-radius: 10px; padding: 4px 8px; display: inline-flex; align-items: center; gap: 4px; }
+.gal-badge.archive { color: #9a889f; background: #f0ecf3; border-color: #ddd3e2; }
+.gal-src { display: inline-flex; align-items: center; gap: 5px; font-size: 10.5px; color: #985b83; margin-top: 7px; }
+.gal-src:hover { text-decoration: underline; }
+
+/* 灯箱 */
+.lightbox { border: 0; padding: 0; background: transparent; max-width: 100vw; max-height: 100svh; width: 100vw; height: 100svh; }
+.lightbox::backdrop { background: #241d2acc; backdrop-filter: blur(6px); }
+.lb-wrap { position: relative; width: 100%; height: 100%; display: grid; place-items: center; padding: 3vh 4vw; }
+.lb-figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 14px; max-height: 100%; }
+.lb-figure img { max-width: min(88vw, 980px); max-height: 74svh; border-radius: 14px; box-shadow: 0 30px 90px #00000066; background: #fff; transition: transform .3s; cursor: zoom-in; }
+.lb-figure img.zoomed { transform: scale(1.6); cursor: zoom-out; }
+.lb-cap { background: #3a2f42cc; border-radius: 14px; padding: 12px 20px; text-align: center; color: #efe6f2; max-width: min(88vw, 760px); backdrop-filter: blur(8px); }
+.lb-cap strong { font: 500 17px var(--serif); letter-spacing: 1.5px; display: block; }
+.lb-cap span { font-size: 11.5px; opacity: .85; display: block; margin-top: 5px; line-height: 1.7; }
+.lb-cap a { color: #e8c7dd; text-decoration: underline; }
+.lb-btn { position: fixed; top: 50%; transform: translateY(-50%); background: #ffffff22; color: #fff; border-radius: 50%; width: 46px; height: 46px; display: grid; place-items: center; backdrop-filter: blur(6px); border: 1px solid #ffffff33; }
+.lb-btn:hover { background: #ffffff3d; }
+.lb-prev { left: 14px; } .lb-next { right: 14px; }
+.lb-close { position: fixed; right: 16px; top: 14px; transform: none; }
+@media (max-width: 700px) { .lb-btn { width: 38px; height: 38px; } .gal-grid { columns: 2 150px; } }

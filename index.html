@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#eee6f1" />
+<meta name="description" content="До свидания · 直到下次再见。等待达妮娅的第 N 天：蛋糕仪式、相册画廊、二创区、网页桌宠与聊天。角色图均为真人绘制。" />
+<title>До свидания · 直到下次再见</title>
+<link rel="preload" as="image" type="image/webp" href="assets/art/hero-sleep.webp" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='%23b5a5da'/><ellipse cx='50' cy='52' rx='46' ry='13' fill='none' stroke='%23c9a9d6' stroke-width='6' transform='rotate(16 50 52)'/></svg>" />
+<link rel="stylesheet" href="assets/css/base.css" />
+<link rel="stylesheet" href="assets/css/home.css" />
+<link rel="stylesheet" href="assets/css/pet.css" />
+</head>
+<body>
+<div class="world">
+  <div class="page-wash" aria-hidden="true"></div>
+  <div class="bubbles" id="bubbles" aria-hidden="true"></div>
+  <div class="page-grain" aria-hidden="true"></div>
+
+  <header class="header">
+    <a class="brand" href="./" aria-label="До свидания · 直到下次再见 · 首页">
+      <svg class="brand-symbol" viewBox="0 0 100 72" aria-hidden="true">
+        <g stroke-linejoin="round">
+          <circle cx="51" cy="37" r="16" fill="#b5a5da" stroke="#6c83cf" stroke-width="3"/>
+          <circle cx="51" cy="37" r="12.5" fill="none" stroke="#faf2d9" stroke-width="3"/>
+          <path d="M48 25 60 2 55 29" fill="#e6e5f4" stroke="#718bdb" stroke-width="3"/>
+          <ellipse cx="50" cy="38" rx="38" ry="11" transform="rotate(16 50 38)" fill="none" stroke="#c9a9d6" stroke-width="3"/>
+        </g>
+      </svg>
+      <span class="brand-name">До свидания<small>直到下次再见 · DENIA SHRINE</small></span>
+    </a>
+    <nav aria-label="站点导航">
+      <a href="./" aria-current="page">首页</a>
+      <a href="gallery.html">相册画廊</a>
+      <a href="fanworks.html">二创区</a>
+      <a href="pet.html">互动区</a>
+      <a href="daily/index.html">日报</a>
+    </nav>
+    <div class="header-side">
+      <span class="status-badge" id="status"><span class="dot"></span> 正在连接</span>
+      <span class="cake-chip" id="cake-chip" title="全站累计留下的蛋糕"></span>
+    </div>
+  </header>
+
+  <main class="home-main" id="main">
+    <div class="scene" aria-hidden="true">
+      <picture>
+        <source type="image/avif" srcset="assets/art/hero-sleep-1280.avif 1280w, assets/art/hero-sleep-1920.avif 1920w" sizes="100vw" />
+        <source type="image/webp" srcset="assets/art/hero-sleep-1280.webp 1280w, assets/art/hero-sleep-1920.webp 1920w" sizes="100vw" />
+        <img src="assets/art/hero-sleep.webp" alt="" fetchpriority="high" />
+      </picture>
+      <div class="scene-wash"></div>
+      <div class="scene-grain"></div>
+    </div>
+
+    <section class="hero-copy">
+      <div class="eyebrow"><span></span> SOMEWHERE, WITH YOU</div>
+      <div class="handwritten" aria-hidden="true">Dear Denia</div>
+      <h1 class="waiting-title" aria-label="等待达妮娅的天数">
+        等待达妮娅的第
+        <span class="waiting-count"><strong id="day-count">…</strong><span>天</span></span>
+      </h1>
+      <p class="lead">她睡着的那天起，泡泡就没有停过。留一块蛋糕，说一句话，或者把娅娅拖到窗边——等待这件事，有人一起就不算空等。</p>
+      <div class="ritual">
+        <button class="cake-button" id="cake-button" aria-haspopup="dialog">
+          <span data-icon="cake"></span><span>给娅娅留一块蛋糕</span><span class="button-star" aria-hidden="true">✧</span>
+        </button>
+        <div class="cake-shelf" id="cake-shelf" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <nav class="portals" aria-label="站点分区">
+      <a class="portal" href="daily/index.html">
+        <span class="portal-icon" data-icon="news"></span>
+        <span><small>DENIA DAILY</small><strong>达妮娅日报</strong><em id="portal-daily-sub">二创视频 · 按期回看</em></span>
+        <span class="portal-arrow" data-icon="arrow"></span>
+      </a>
+      <a class="portal" href="gallery.html">
+        <span class="portal-icon" data-icon="brush"></span>
+        <span><small>PHOTO GALLERY</small><strong>相册画廊</strong><em>手绘同人 · 真人绘制承诺</em></span>
+        <span class="portal-arrow" data-icon="arrow"></span>
+      </a>
+      <a class="portal" href="fanworks.html">
+        <span class="portal-icon" data-icon="video"></span>
+        <span><small>FAN CREATIONS</small><strong>二创区</strong><em>手书 · 剪辑 · MMD · 音乐</em></span>
+        <span class="portal-arrow" data-icon="arrow"></span>
+      </a>
+      <a class="portal" href="pet.html">
+        <span class="portal-icon" data-icon="chat"></span>
+        <span><small>IMAGINARY SPACE</small><strong>互动区</strong><em>桌宠 · 聊天 · 吹泡泡</em></span>
+        <span class="portal-arrow" data-icon="arrow"></span>
+      </a>
+    </nav>
+
+    <section class="friends-strip" aria-label="友情链接与站点承诺">
+      <div class="card friend-card">
+        <h3><span data-icon="heart"></span> 友情链接 · 招募中</h3>
+        <p>在这里，遇见同样喜欢她的人。同好站点、创作者主页、一起整理内容的伙伴——递一张纸条过来，我们把位置留给你。</p>
+        <a class="pill" href="fanworks.html#manager">递纸条（via 二创区管理台）</a>
+      </div>
+      <div class="card friend-card">
+        <h3><span data-icon="brush"></span> 真人绘制承诺</h3>
+        <p>本站角色形象一律使用真人绘制的同人作品与游戏内摄影，不使用 AI 生成图。每张图片保留作者署名与原作链接；作者要求下架时立即移除。</p>
+        <a class="pill" href="gallery.html">查看画廊与署名</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="foot-mark">Dasvidaniya</span>
+    <span>До свидания —— 直到下次再见。</span>
+    <span class="foot-links">
+      <a href="gallery.html">画廊</a><a href="fanworks.html">二创区</a><a href="pet.html">桌宠</a><a href="daily/index.html">日报</a>
+    </span>
+  </footer>
+
+  <div class="pet-stage" id="pet-stage" aria-label="桌宠区域"></div>
+</div>
+<script type="module" src="assets/js/home.js"></script>
+</body>
+</html>

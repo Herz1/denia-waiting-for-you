@@ -1,0 +1,76 @@
+{
+  "pledge": "本页所有角色图均为真人绘制（手绘同人 / 游戏内摄影），本站不使用 AI 生成图作为角色形象。每张图片保留作者署名与原作链接；若作者希望下架，请联系站务，我们会立刻移除。",
+  "categories": [
+    { "id": "drawing", "name": "手绘", "desc": "收集手绘插画，在详情中保留作者署名与原作链接。" },
+    { "id": "photo", "name": "摄影", "desc": "整理镜头与游戏内摄影中的达妮娅，点击查看大图。" },
+    { "id": "ai-archive", "name": "AI 草稿 · 已归档", "desc": "旧的「造梦者」AI 草稿合集自本版起归档：角色形象一律改用真人绘制。" }
+  ],
+  "items": [
+    {
+      "id": "art-sleep",
+      "category": "drawing",
+      "title": "睡梦中的公主与黑猫玩偶",
+      "artist": "站藏原画 · 作者署名整理中",
+      "source": "站点旧版主视觉（随站传承的手绘同人图）",
+      "sourceUrl": "",
+      "src": "assets/art/hero-sleep.webp",
+      "full": "assets/art/hero-sleep-full.jpg",
+      "note": "旧站首页的主视觉：她在泡泡与纸人之间睡着，怀里是那只缝补过的黑猫玩偶。本版继续把她放在门口。",
+      "orientation": "landscape",
+      "crop": "50% 30%"
+    },
+    {
+      "id": "art-wink",
+      "category": "drawing",
+      "title": "眨眼 · 剪刀手",
+      "artist": "站藏原画 · 作者署名整理中",
+      "source": "站点旧版移动版主视觉（手绘同人图）",
+      "sourceUrl": "",
+      "src": "assets/art/wink.webp",
+      "full": "assets/art/wink.webp",
+      "note": "星屑背景里的一次眨眼与剪刀手，旧站把她留给小屏幕，本版把她留给桌宠的清醒表情。",
+      "orientation": "portrait",
+      "crop": "50% 22%"
+    },
+    {
+      "id": "art-two",
+      "category": "drawing",
+      "title": "我们两个 · 嘘",
+      "artist": "HiroHenuri（X @HiroHenuri）",
+      "source": "r/WutheringWaves 作者自投",
+      "sourceUrl": "https://www.reddit.com/r/WutheringWaves/comments/1sjb5i3/denia_fanart_by_me_hirohenuri/",
+      "src": "assets/art/fan-hirohenuri.png",
+      "full": "assets/art/fan-hirohenuri.png",
+      "note": "两个达妮娅同时比出「嘘」：前面的是她愿意给你看的样子，后面的是泡影视阈里的那一个。",
+      "orientation": "portrait",
+      "crop": "38% 30%"
+    },
+    {
+      "id": "art-stardust",
+      "category": "drawing",
+      "title": "指尖星尘",
+      "artist": "Bao 199839（pixiv）",
+      "source": "经 Zerochan 收录（#4693438）",
+      "sourceUrl": "https://www.zerochan.net/4693438",
+      "src": "assets/art/fan-stardust.webp",
+      "full": "assets/art/fan-stardust.webp",
+      "note": "银河做背景的一次回眸：红色手套抵在唇边，像是要把一句台词先藏起来。",
+      "orientation": "portrait",
+      "crop": "50% 18%"
+    },
+    {
+      "id": "art-minglu",
+      "category": "drawing",
+      "title": "链条午后",
+      "artist": "MingLu（小红书）",
+      "source": "经 Zerochan 收录（#4687520），画面带作者签名",
+      "sourceUrl": "https://www.zerochan.net/4687520",
+      "src": "assets/art/fan-minglu.webp",
+      "full": "assets/art/fan-minglu.webp",
+      "note": "她提着那枚蓝色棱镜吊坠，链条松松地垂下来——签名落在裙摆的影子里。",
+      "orientation": "portrait",
+      "crop": "42% 16%"
+    }
+  ],
+  "aiArchiveNotice": "「造梦者泡泡机」曾收录 AI 绘图合集。自 2026-10-26 版起，本站角色形象一律使用真人绘制作品，AI 草稿不再展出、不再新增；此格保留为归档说明，以记录来路。"
+}
