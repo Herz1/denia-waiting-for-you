@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="在达妮娅日报里，找到想再看一次的作品。按作者、标题和标签搜索，收藏喜欢的二创，带走自己的星光清单。">
+  <title>星光收藏室 · 达妮娅日报</title>
+  <link rel="stylesheet" href="./library.css">
+  <script type="module" src="./library.js"></script>
+</head>
+<body>
+  <a class="skip" href="#collection">跳到作品收藏</a>
+  <header class="site-header wrap">
+    <a class="brand" href="../"><span class="brand-star" aria-hidden="true">✧</span><span>До свидания<small>直到下次再见</small></span></a>
+    <nav aria-label="收藏室导航"><a href="../">返回首页</a><a href="./index.html">本期完整日报 ↗</a></nav>
+  </header>
+  <main class="wrap">
+    <section class="intro" aria-labelledby="page-title">
+      <div class="intro-copy"><p class="eyebrow">DENIA DAILY / A LITTLE ROOM FOR YOUR FAVORITES</p><h1 id="page-title">喜欢的星光，<br><em>慢慢收藏。</em></h1><p class="lead">从一段心动，到下一次重看。<br>在这里找寻作品，也为喜欢的创作者留一个位置。</p><div class="issue"><span class="issue-dot"></span>2026.10.17 本期作品集 <span aria-hidden="true">·</span> <span id="total-count">正在整理星光…</span></div></div>
+      <figure class="keepsake"><span class="tape" aria-hidden="true"></span><img src="../assets/ep-cover-phone-665-7230ab66269ec693.webp" alt="达妮娅的粉紫色主题插画" width="665" height="1182"><figcaption>Somewhere, with you. <span aria-hidden="true">✧</span></figcaption></figure>
+      <span class="intro-spark" aria-hidden="true">✦</span>
+    </section>
+    <section id="collection" class="collection" aria-labelledby="collection-title">
+      <div class="section-heading"><div><p class="eyebrow">YOUR COLLECTION</p><h2 id="collection-title">星光收藏室 <span aria-hidden="true">✧</span></h2></div><button type="button" class="shelf-button" id="saved-filter" aria-pressed="false" disabled>♡ 我的收藏 <span id="saved-count">0</span></button></div>
+      <form class="filters" id="filters" role="search">
+        <label class="search-label">寻找作品<input id="search" type="search" name="q" placeholder="试试作品名、作者，或一个标签…" maxlength="160" autocomplete="off" disabled></label>
+        <label>作品类型<select id="category" disabled><option value="">全部类型</option></select></label>
+        <label>排列方式<select id="sort" disabled><option value="original">本期原有顺序</option><option value="views">播放较多</option><option value="title">作品名称</option></select></label>
+      </form>
+      <div class="results-bar"><p id="results" role="status" aria-live="polite">正在读取本期日报…</p><button class="text-button" id="reset" type="button" disabled>重置筛选</button></div>
+      <div id="works" class="grid" aria-busy="true"></div>
+      <div id="empty" class="empty" hidden><span aria-hidden="true">✧</span><h3>这里还在等一束星光</h3><p id="empty-message"></p></div>
+      <div id="error" class="empty" hidden><h3>暂时没有读到本期作品</h3><p>请重新载入页面，或直接打开完整日报。</p><a href="./index.html">打开原有日报 ↗</a></div>
+    </section>
+    <section class="backup" aria-labelledby="backup-title"><div><p class="eyebrow">TAKE YOUR STARS WITH YOU</p><h2 id="backup-title">把喜欢的，随身带走。</h2><p>收藏保存在当前浏览器。导出一份清单，换设备后也能继续。<br>导入只合并本站收录的作品，不会清空已有收藏。</p></div><div class="backup-actions"><button id="export" type="button" disabled>导出收藏 ↗</button><button id="import" type="button" disabled>导入清单</button><input id="import-file" type="file" accept=".json,application/json" hidden aria-label="选择星光收藏清单"></div></section>
+    <p id="notice" class="notice" role="status" aria-live="polite"></p>
+  </main>
+  <footer class="wrap"><p>每一束星光，都来自创作者的用心。请通过原视频支持他们。</p><p>本页沿用 <a href="./index.html">2026.10.17 日报</a> 的 49 部作品、署名与封面；播放数为原日报采集快照。角色与媒体权利归原权利人所有。</p><span>До свидания · 直到下次再见</span></footer>
+  <noscript><p class="wrap">收藏室需要 JavaScript。你仍然可以阅读 <a href="./index.html">完整日报</a>。</p></noscript>
+</body>
+</html>

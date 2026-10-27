@@ -36,6 +36,7 @@ npm run preview -- --host 0.0.0.0 --port 4173
 | 互动区 | `/interactive.html` |
 | 友情链接 | `/friends.html` |
 | 达妮娅日报 | `/daily/index.html` |
+| 星光收藏室：搜索、收藏、导入导出 | `/daily/library.html` |
 | 二创候选审核、导出反馈 | `/review.html` |
 
 ## 给 Arena Agent
