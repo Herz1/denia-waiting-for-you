@@ -1,0 +1,14 @@
+{
+  "name": "denia-waiting-for-you",
+  "version": "3.0.0",
+  "description": "До свидания · 直到下次再见 —— 达妮娅（鸣潮）非官方粉丝纪念馆：双形态主题、泡泡粒子、归档画廊、二创日报、桌宠互动。纯静态、零构建、零依赖。",
+  "private": true,
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node --watch server/server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}
