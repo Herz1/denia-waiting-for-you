@@ -1,0 +1,110 @@
+达妮娅纪念馆 · 交付资产保全审计
+更新日期：2026-10-27
+基线仓库：https://github.com/Herz1/denia-waiting-for-you
+基线提交：e8ee06df9e248533e0946f59c597075dbaaee78a
+基线附件：preview-daniya-production-cbdc5b8d-20261027(1).zip
+范围：原71文件发布包、本次线上图库元数据快照与新版素材映射。没有把原编译包称为已恢复的React/TypeScript源码。
+
+一、原文件保全
+导入基线：71个文件、19,236,169字节。当前按清单复核SHA-256：71/71一致。
+其中63个非HTML文件仍在原路径；8个原HTML字节完整归档在legacy/下的对应相对路径，原公共HTML入口改为新版。
+docs/import-manifest.json保持原导入基线不变。正常重构的HTML差异与原件归档分别记录，不修改基线掩盖差异。
+原42个媒体文件全部列于memorial/material-data.js，并可在archive.html的门控历史素材册打开原路径；原先仅存盘的7个封面/重复原件已有可见入口。
+24个原首页响应式AVIF/WebP候选全部进入新版srcset；相机箭头、徽章、参数、签名、蛋糕图、6个分类示例继续在新版使用。
+旧13个assets JS、5个CSS与原3个路由/响应头/代理文件继续同路径保留。legacy/和docs/不进入公开dist/，避免旧页面绕过默认剧情保护。
+
+二、内容迁移
+49条日报：原title/href/author/authorUrl/data URI封面/duration/category/tags/description/published/stats与原文保留于original-data.js；由fanworks.html和daily/index.html展示。
+日报统计为2026-10-18采集的历史快照；8条原来没有简介的条目继续留空。
+原二创4条（1份日报+3视频）完整保留在fanworks数据中，相关作品均有新版入口。
+原5栏目和246条去重字面文案保留；文案存档默认门控。246是选定编译模块的双引号字面字符串集合，不自动证明所有模板字符串和拼接文案已逐句复核。原HTML/旧bundle保留用于继续核对。
+原审核176条候选、选择、备注、JSON导入导出逻辑保留；新版review.html经剧情确认后载入原审核HTML。
+线上图库：87图、67组；原src/thumb/标签/分组成员等字段保留于gallery-data.js与docs/live-gallery-snapshot-20261027.json。图像字节仍由原站提供，元数据保存不等于87张原图已离线备份。
+
+三、审校范围与剧情控制
+主代理已目检87个成员的缩略图与原可见标题；当前43组可公开、24组不确定或剧情相关组默认封存。各组的review记录注明allMemberThumbnailsReviewed。高清细字未逐字转写；这不构成全文OCR/逐字校对声明。
+视频：主代理审校后，30条元信息可显示标题/封面/作者，其余19条元信息封存；全部视频简介与标签默认封存。外链视频未逐帧审核，未解锁访问原帖前显示提示。
+剧情页、原文存档、42媒体历史素材册与176候选审核工具使用统一确认；重新封存会清理已展开内容。首页与分享摘要保持中性。
+5月21日沿用为相遇/等待计数纪念日，不擅自登记为角色生日。
+
+四、署名与依赖边界
+49条日报的原作者、作者主页和原帖保留。67组线上画廊的作者/作者主页/原帖在原元数据中均为空；3个分类示例同样缺原署名。页面如实显示待补录，不以组名或文件名猜填。
+原71文件包没有实际桌宠脚本、精灵图和独立音频。新版优先接入原站companion.js，失败时由本地pet.js用同一原站denia.webp运行九种实测动作；减少动效会暂停。聊天/选图/表情包/朗读继续指向原pet-preview.html，原聊天离线状态不由新前端伪装恢复。精灵图仍是远程依赖；独立官方语音与音乐待可靠素材。
+作者申请下架提供实际项目GitHub Issues入口，私密联系邮箱待补。原用户localStorage记录不属于Git/ZIP内容；换域需要导入/导出迁移。
+
+五、71项逐文件证据
+01. 原路径 _headers → 原字节位置 _headers | 130 bytes | SHA-256 ee2122b21c64c842ddb0fc279c80d1a7b86b51326b79b5de95fe16bc8bc986fd
+02. 原路径 _routes.json → 原字节位置 _routes.json | 55 bytes | SHA-256 8eea2003ec1e6461846348bb6da9d47ada3da17144492fc83361dfa7a47a0117
+03. 原路径 _worker.js → 原字节位置 _worker.js | 3185 bytes | SHA-256 f9381daf925324b998bcca8de438a740da2bfdcccf9f1d52c6e9927ccc364092
+04. 原路径 assets/Fanworks-9XaC8F1t.js → 原字节位置 assets/Fanworks-9XaC8F1t.js | 23055 bytes | SHA-256 fbdb2ba7a931794dd2b88d2c7184b8b7a3a920ad0d1cd8110b469c763e33899c
+05. 原路径 assets/Fanworks-DOcadX5J.js → 原字节位置 assets/Fanworks-DOcadX5J.js | 10670 bytes | SHA-256 1d3c11b429b77b09d3ea0aff184ae3d7c3e64a699bf134ef00e2e07c4e87bd6f
+06. 原路径 assets/Fanworks-ftuIpoX7.css → 原字节位置 assets/Fanworks-ftuIpoX7.css | 8473 bytes | SHA-256 6f41c3ac9437d2692259585d28a2a40159c39adf1ed78c2313d5fd0a8873f3f7
+07. 原路径 assets/Gallery-BN5KDrAV.js → 原字节位置 assets/Gallery-BN5KDrAV.js | 12814 bytes | SHA-256 1872889e72a035436fc1a8e5b6e9f78a90ab285990a26a39b21064a188425717
+08. 原路径 assets/Gallery-CCtpU5_P.js → 原字节位置 assets/Gallery-CCtpU5_P.js | 12814 bytes | SHA-256 118efd47d0c511a30f34e76a30e4867391c2691bc0c1e3a6230410e31856ac56
+09. 原路径 assets/Gallery-CvI4aI7I.js → 原字节位置 assets/Gallery-CvI4aI7I.js | 12814 bytes | SHA-256 36a2280372b2a826fd6cb0e13b3497c768b8a82f94757a0c87376e568cf2c0eb
+10. 原路径 assets/Gallery-EKI38csS.js → 原字节位置 assets/Gallery-EKI38csS.js | 12814 bytes | SHA-256 6d2b65bfa45890da30b56add652ca4424f77de6ca3daef48ccda035521db93b5
+11. 原路径 assets/Gallery-XnlAuLOt.css → 原字节位置 assets/Gallery-XnlAuLOt.css | 29016 bytes | SHA-256 1f2a42752769695b8ff501d79c34eb8481b1a62ded5654450ca4dd8960db42e4
+12. 原路径 assets/camera-arrow-DJ67sdcd.png → 原字节位置 assets/camera-arrow-DJ67sdcd.png | 4230 bytes | SHA-256 8a73aee88235e800fb3339164430b4fc5012529bd3eee2cdeb7bc8e722e20075
+13. 原路径 assets/camera-emblem-BN63IOl3.png → 原字节位置 assets/camera-emblem-BN63IOl3.png | 5439 bytes | SHA-256 be90eefa53db170dc1685065aad1e5d960e9bff7a2e071a0b99e3bb5fd33a52e
+14. 原路径 assets/camera-parameters-C8_ZMfAI.png → 原字节位置 assets/camera-parameters-C8_ZMfAI.png | 17582 bytes | SHA-256 c81c1280487428a8783cee95e56c8c3ac2b7964aa96641d61a63b662743835fd
+15. 原路径 assets/denia-signature-CEtRGKVD.png → 原字节位置 assets/denia-signature-CEtRGKVD.png | 18705 bytes | SHA-256 e58bc257b7b3153ebcbf1cad9d23889b2ef64d782eb5c061d4671a1681c12563
+16. 原路径 assets/ep-cover-0a6512f6143ead1e.webp → 原字节位置 assets/ep-cover-0a6512f6143ead1e.webp | 421684 bytes | SHA-256 0a6512f6143ead1e52d89ffef28e9aae7326c1b88d6ba7aca3bbdca1ea324dee
+17. 原路径 assets/ep-cover-1280-7bb20751846e8ae2.webp → 原字节位置 assets/ep-cover-1280-7bb20751846e8ae2.webp | 152550 bytes | SHA-256 7bb20751846e8ae26ce1c1cf0804bb02eba025fb1d5a01e0d8e521b735fe693c
+18. 原路径 assets/ep-cover-1280-d8db82a3b5bd93a8.avif → 原字节位置 assets/ep-cover-1280-d8db82a3b5bd93a8.avif | 129659 bytes | SHA-256 d8db82a3b5bd93a87487320c58ce76e07c43f3a485c23cf70fec1b2cd9f7ed79
+19. 原路径 assets/ep-cover-1600-659c17b22f2ec281.avif → 原字节位置 assets/ep-cover-1600-659c17b22f2ec281.avif | 178708 bytes | SHA-256 659c17b22f2ec28190db8d0470b77b9399faf87ab17660a85ad28a362ad1cc56
+20. 原路径 assets/ep-cover-1600-6bd58c037d61b7f6.webp → 原字节位置 assets/ep-cover-1600-6bd58c037d61b7f6.webp | 214242 bytes | SHA-256 6bd58c037d61b7f67b742dd23095c1e857b3fcd172032589d079e74fdd77472a
+21. 原路径 assets/ep-cover-1920-391422c29dad58c6.avif → 原字节位置 assets/ep-cover-1920-391422c29dad58c6.avif | 227937 bytes | SHA-256 391422c29dad58c63cec40919eb58ed2c963727868aaa6ec6b002b97a8fcd350
+22. 原路径 assets/ep-cover-1920-f54792e5e1a46187.webp → 原字节位置 assets/ep-cover-1920-f54792e5e1a46187.webp | 279516 bytes | SHA-256 f54792e5e1a46187d5753fbcd197ebea971f21922963e4aafde296e92d36dae0
+23. 原路径 assets/ep-cover-2560-d1f757061434f2bf.webp → 原字节位置 assets/ep-cover-2560-d1f757061434f2bf.webp | 412900 bytes | SHA-256 d1f757061434f2bf5b7b4c905a32248f1d6425eeb42e97cc0f8b13931e133240
+24. 原路径 assets/ep-cover-2560-fc239525c7b8bf1d.avif → 原字节位置 assets/ep-cover-2560-fc239525c7b8bf1d.avif | 339296 bytes | SHA-256 fc239525c7b8bf1dcc8aa3af1ab3b866bc4a64f873140f0c7a97ca6815631862
+25. 原路径 assets/ep-cover-phone-1064-03d00ca3090b8ab1.webp → 原字节位置 assets/ep-cover-phone-1064-03d00ca3090b8ab1.webp | 196718 bytes | SHA-256 03d00ca3090b8ab1beebc0944a927cb5ea03372820a8005148df4785ee1e060a
+26. 原路径 assets/ep-cover-phone-1064-0e51ae44ca82728c.avif → 原字节位置 assets/ep-cover-phone-1064-0e51ae44ca82728c.avif | 155920 bytes | SHA-256 0e51ae44ca82728c2e3070f136d3733f8b8487b716a2db45b2d15ec25edffbb9
+27. 原路径 assets/ep-cover-phone-532-3f5de20e3c0e4b48.avif → 原字节位置 assets/ep-cover-phone-532-3f5de20e3c0e4b48.avif | 59497 bytes | SHA-256 3f5de20e3c0e4b4840d708437e4ddbdff26d830ab8714979deb1f662822b4e08
+28. 原路径 assets/ep-cover-phone-532-98291e2f295d9d37.webp → 原字节位置 assets/ep-cover-phone-532-98291e2f295d9d37.webp | 72054 bytes | SHA-256 98291e2f295d9d37436d9b6b33e410e794e3ba14e39aee149f22073c5c89de50
+29. 原路径 assets/ep-cover-phone-665-7230ab66269ec693.webp → 原字节位置 assets/ep-cover-phone-665-7230ab66269ec693.webp | 99896 bytes | SHA-256 7230ab66269ec693e316feb733abc66ff46bea786f53b9c833b029b13b16894d
+30. 原路径 assets/ep-cover-phone-665-b9e812a995995cb8.avif → 原字节位置 assets/ep-cover-phone-665-b9e812a995995cb8.avif | 82593 bytes | SHA-256 b9e812a995995cb8e5245649db76b8c9ac1abc00ccf4ed88645117ad06efe4f0
+31. 原路径 assets/ep-cover-phone-798-5d3b69f1a36063fc.webp → 原字节位置 assets/ep-cover-phone-798-5d3b69f1a36063fc.webp | 130354 bytes | SHA-256 5d3b69f1a36063fc5bf64b722a6659d0f61346774f53d135ad6941b82996867a
+32. 原路径 assets/ep-cover-phone-798-c2fd6d9844e6a2ee.avif → 原字节位置 assets/ep-cover-phone-798-c2fd6d9844e6a2ee.avif | 105176 bytes | SHA-256 c2fd6d9844e6a2ee62535c31f77867415a1a1ce2bb89d6366a0e8b68c8b4896c
+33. 原路径 assets/ep-cover-wide-phone-1053-845b701a15bad5b2.avif → 原字节位置 assets/ep-cover-wide-phone-1053-845b701a15bad5b2.avif | 122325 bytes | SHA-256 845b701a15bad5b20b9e3abf4d021d8e38a370b74087695da12d5b2e4fc04348
+34. 原路径 assets/ep-cover-wide-phone-1053-878b9bb1b585150b.webp → 原字节位置 assets/ep-cover-wide-phone-1053-878b9bb1b585150b.webp | 148054 bytes | SHA-256 878b9bb1b585150bf10da721a7f57b539d8ef95a1a6788f656eb1c92c2311873
+35. 原路径 assets/ep-cover-wide-phone-1263-25b513e46dd71d43.webp → 原字节位置 assets/ep-cover-wide-phone-1263-25b513e46dd71d43.webp | 192622 bytes | SHA-256 25b513e46dd71d43d0f1432d8c18489bf3698fced40582cc974995c9147635ac
+36. 原路径 assets/ep-cover-wide-phone-1263-3bee6676d7803aaa.avif → 原字节位置 assets/ep-cover-wide-phone-1263-3bee6676d7803aaa.avif | 155406 bytes | SHA-256 3bee6676d7803aaadd9067bbc7e412406022e0be39a946f52c6afa221345a041
+37. 原路径 assets/ep-cover-wide-phone-1684-50079cd40b2a51f9.webp → 原字节位置 assets/ep-cover-wide-phone-1684-50079cd40b2a51f9.webp | 285320 bytes | SHA-256 50079cd40b2a51f9bc25768e3613d6d07615cbf4ca2a947ee49d09b09a9adbcc
+38. 原路径 assets/ep-cover-wide-phone-1684-a90d72942c34d756.avif → 原字节位置 assets/ep-cover-wide-phone-1684-a90d72942c34d756.avif | 231283 bytes | SHA-256 a90d72942c34d756310fd50bbbcc0f847c626ca4abd2b96e36b5978f23ebac31
+39. 原路径 assets/ep-cover-wide-phone-842-3f69bbffa3330148.webp → 原字节位置 assets/ep-cover-wide-phone-842-3f69bbffa3330148.webp | 105152 bytes | SHA-256 3f69bbffa333014818e8b1ca409e9334b0094ca01b298f31418f206a570d58b7
+40. 原路径 assets/ep-cover-wide-phone-842-7b8bbbb6d6533687.avif → 原字节位置 assets/ep-cover-wide-phone-842-7b8bbbb6d6533687.avif | 88853 bytes | SHA-256 7b8bbbb6d6533687199a7b593712432c2cfd832c7cce8841dff29848074d4420
+41. 原路径 assets/gallery-preview-DBxFLbBG.jpg → 原字节位置 assets/gallery-preview-DBxFLbBG.jpg | 2165648 bytes | SHA-256 1f4a7ae89f965c1a289f60a5e539412bc88ce2c1200639c87108fa94aff2fde4
+42. 原路径 assets/image-1f4a7ae89f965c1a.jpg → 原字节位置 assets/image-1f4a7ae89f965c1a.jpg | 2165648 bytes | SHA-256 1f4a7ae89f965c1a289f60a5e539412bc88ce2c1200639c87108fa94aff2fde4
+43. 原路径 assets/image-8a73aee88235e800.png → 原字节位置 assets/image-8a73aee88235e800.png | 4230 bytes | SHA-256 8a73aee88235e800fb3339164430b4fc5012529bd3eee2cdeb7bc8e722e20075
+44. 原路径 assets/image-be90eefa53db170d.png → 原字节位置 assets/image-be90eefa53db170d.png | 5439 bytes | SHA-256 be90eefa53db170dc1685065aad1e5d960e9bff7a2e071a0b99e3bb5fd33a52e
+45. 原路径 assets/image-c81c1280487428a8.png → 原字节位置 assets/image-c81c1280487428a8.png | 17582 bytes | SHA-256 c81c1280487428a8783cee95e56c8c3ac2b7964aa96641d61a63b662743835fd
+46. 原路径 assets/image-e58bc257b7b3153e.png → 原字节位置 assets/image-e58bc257b7b3153e.png | 18705 bytes | SHA-256 e58bc257b7b3153ebcbf1cad9d23889b2ef64d782eb5c061d4671a1681c12563
+47. 原路径 assets/main-4Hl6jBbF.css → 原字节位置 assets/main-4Hl6jBbF.css | 17151 bytes | SHA-256 1edbd589f9fa807e9fcb157b40d35e83277680e64416697a57f3e85e6deb6572
+48. 原路径 assets/main-B-e5tOF-.js → 原字节位置 assets/main-B-e5tOF-.js | 238352 bytes | SHA-256 5fad2e44d4fdc1bee4b7241efabdb2117ba40931ed215f7cbb9460adb7c7e9cf
+49. 原路径 assets/main-B3figriV.js → 原字节位置 assets/main-B3figriV.js | 237927 bytes | SHA-256 c6c77d4f4a0bdc2b77a278fc3bcff3e317fa1031651d4e4ee707eedf4867bf9a
+50. 原路径 assets/main-Bu7xU7kz.js → 原字节位置 assets/main-Bu7xU7kz.js | 238352 bytes | SHA-256 159679a61779dab3d0d19ed09cc1a97e039f8166791e26b3d985d40b8c2668b5
+51. 原路径 assets/main-ByoURVWF.js → 原字节位置 assets/main-ByoURVWF.js | 236619 bytes | SHA-256 22e5a98e64489180a96904f2377150eee18aec9e8b1b2bad9ee4531749a2dfc1
+52. 原路径 assets/main-CjR34y8G.js → 原字节位置 assets/main-CjR34y8G.js | 249728 bytes | SHA-256 6e19df07a64dc31eae9025e8033304ff8ba868ccce0620508de2cbd5f68f872f
+53. 原路径 assets/main-DjHvMW_W.css → 原字节位置 assets/main-DjHvMW_W.css | 46166 bytes | SHA-256 bbfe160ccea65b2d14781b4b6a51284bb5b10a7b279528aae9325675c84fbd11
+54. 原路径 assets/main-kb1JgxCS-perf-640b33a46d9bc3cd.js → 原字节位置 assets/main-kb1JgxCS-perf-640b33a46d9bc3cd.js | 246194 bytes | SHA-256 640b33a46d9bc3cd77fc806493c63538928ff96d7b566eb78d116df772f30d0e
+55. 原路径 assets/main-kb1JgxCS.js → 原字节位置 assets/main-kb1JgxCS.js | 3194931 bytes | SHA-256 201e0917050c7d2f992d8f9d7ef67433716940bd4d967fa6451f35b31d2b3227
+56. 原路径 assets/main-w_ri9Cg0.css → 原字节位置 assets/main-w_ri9Cg0.css | 53637 bytes | SHA-256 70c60bd805d83fbbdedad5da8cc01739aac5726a0f9ceae04fdd7f4398ad96ce
+57. 原路径 backgrounds/ep-cover.jpg → 原字节位置 backgrounds/ep-cover.jpg | 1075329 bytes | SHA-256 3b33c4f1457bd78c2a5fd774cf99feb6616d52aa7a0cb03365703b423a8977e2
+58. 原路径 daily/index.html → 原字节位置 legacy/daily/index.html | 3415572 bytes | SHA-256 c6d9970d610586d1c0e96aaa041c2b1537dc1d9f111541b53c24c202bbfec5ee
+59. 原路径 dreamer.html → 原字节位置 legacy/dreamer.html | 1044 bytes | SHA-256 0dea6d3520581ca448fa5df8efd0e2eb1196c5ab44489c31c6c469db0bd3bdf2
+60. 原路径 fanworks.html → 原字节位置 legacy/fanworks.html | 1074 bytes | SHA-256 735ac777b0a53a37806ab7ff4725e5108d6f5f70e2ebcbfc49b41643940a091b
+61. 原路径 friends.html → 原字节位置 legacy/friends.html | 1047 bytes | SHA-256 6e78ca615d72baf974bd1049b0d7d0d0cef6e86b633cda7b36b7f58c8e3307d2
+62. 原路径 gallery-examples/ai-image.webp → 原字节位置 gallery-examples/ai-image.webp | 303020 bytes | SHA-256 475dabe025e3214069dd513775d3fe407978098b7cee31fe7d0ef1d6e62a556d
+63. 原路径 gallery-examples/ai-thumb.webp → 原字节位置 gallery-examples/ai-thumb.webp | 47410 bytes | SHA-256 189a5d43796f05e4d6aef3791ec735054343eb58ddecba7eab3c9fe0a4ca702a
+64. 原路径 gallery-examples/drawing-image.webp → 原字节位置 gallery-examples/drawing-image.webp | 121920 bytes | SHA-256 fb4a4575ad6d67add7805bacc4186d6f653c4b17967a1ed605a7d1a3e2b93bea
+65. 原路径 gallery-examples/drawing-thumb.webp → 原字节位置 gallery-examples/drawing-thumb.webp | 15630 bytes | SHA-256 aba9ae07521950089220470c2ea26f0f63ac21c3335b299294a62f655e8c8ae2
+66. 原路径 gallery-examples/photo-image.webp → 原字节位置 gallery-examples/photo-image.webp | 197990 bytes | SHA-256 468ee4c0b21c9fef3818acc0004dc1c97d77444c71d63b4bbf0d776ee45ee036
+67. 原路径 gallery-examples/photo-thumb.webp → 原字节位置 gallery-examples/photo-thumb.webp | 40844 bytes | SHA-256 20653bc4fe1ab642d59879d559cca7a8e56abac9df218a91cd7d4e5ff84eb9a8
+68. 原路径 gallery.html → 原字节位置 legacy/gallery.html | 1091 bytes | SHA-256 655fd9f777b16ddf2cc6a9f7aae473c153bc10b74a88ad11196e3402a1999eba
+69. 原路径 index.html → 原字节位置 legacy/index.html | 9468 bytes | SHA-256 5c8f5b9f0977950e81ca265cb82d26ce7a79a2b0c56b86660eb7fa9efb3b1d2a
+70. 原路径 interactive.html → 原字节位置 legacy/interactive.html | 1048 bytes | SHA-256 bbb8ee643ad7fb6abdc72024cd0851154d56850e610303fba4eef610e31f140a
+71. 原路径 review.html → 原字节位置 legacy/review.html | 107862 bytes | SHA-256 37d5f2486b292f7af38022675903722a5b97ca61055ae8388b93266eeed1a036
+
+六、验证边界
+以上只报告具体保全与已记录的审校范围。远程接口可用性、目标托管域表现、浏览器下载权限、无障碍与视觉效果需结合实际验证记录判断；不以离线核对替代“全部通过”。
+运行命令：npm run verify:preservation。该脚本不修改文件，不访问网络；详细范围见OPERATIONS.txt。

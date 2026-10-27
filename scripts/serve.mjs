@@ -33,6 +33,7 @@ async function serveAsset(request) {
   try { pathname = decodeURIComponent(new URL(request.url).pathname); }
   catch { return new Response('Bad request', { status: 400 }); }
   if (pathname.endsWith('/')) pathname += 'index.html';
+  else if (!extname(pathname) && !pathname.startsWith('/api/')) pathname += '.html';
   const relative = pathname.replace(/^\/+/, '');
   const filename = resolve(root, relative);
   if (!filename.startsWith(root + sep) || !isPublicPath(relative)) return new Response('Not found', { status: 404 });
