@@ -41,12 +41,14 @@ function renderCard(work) {
   const save = document.createElement('button'); save.type = 'button'; save.className = 'save';
   const isSaved = saved.has(work.id);
   save.textContent = isSaved ? '♥ 已收藏' : '♡ 收藏';
+  save.dataset.workId = work.id;
   save.setAttribute('aria-pressed', String(isSaved)); save.setAttribute('aria-label', (isSaved ? '取消收藏：' : '收藏：') + work.title);
   save.addEventListener('click', () => {
     saved = latestSaved(); const removing = saved.has(work.id);
     if (removing) saved.delete(work.id); else saved.add(work.id);
     if (onlySaved && removing) $('saved-filter').focus();
     const durable = persist(); render();
+    if (!(onlySaved && removing)) $('works').querySelector(`[data-work-id="${work.id}"]`)?.focus();
     if (durable) notice(removing ? '已从收藏中移除。' : '已收藏，下次打开仍可找到。');
   });
   bottom.append(textElement('span', 'views', `${work.views.toLocaleString('zh-CN')} 播放 · 本期快照`), save);
