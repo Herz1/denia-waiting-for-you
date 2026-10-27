@@ -1,0 +1,30 @@
+name: Verify collection
+on:
+  push:
+    branches: [feat/site-polish-20261028]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  collection:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check module syntax
+        run: |
+          node --check daily/collection-core.js
+          node --check daily/library.js
+          node --check daily/entry.js
+      - run: npm test
+      - run: npm run build
+      - name: Verify collection is packaged
+        run: |
+          test -f dist/daily/library.html
+          test -f dist/daily/collection-core.js
+          test -f dist/daily/library.js
+          test -f dist/daily/library.css
