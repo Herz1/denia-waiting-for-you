@@ -1,14 +1,17 @@
 {
   "name": "denia-waiting-for-you",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "type": "module",
-  "description": "达妮娅粉丝站发布文件与 Arena Agent 交接",
-  "engines": { "node": ">=20" },
+  "description": "До свидания · 达妮娅角色纪念馆，保留原站素材的零依赖静态前端",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "node scripts/serve.mjs",
     "start": "node scripts/serve.mjs",
     "build": "node scripts/build.mjs",
-    "preview": "node scripts/serve.mjs --root dist"
+    "preview": "node scripts/serve.mjs --root dist",
+    "verify:preservation": "node scripts/verify-preservation.mjs"
   }
 }

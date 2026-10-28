@@ -1,0 +1,9 @@
+* text=auto eol=lf
+assets/** -text
+backgrounds/** -text
+gallery-examples/** -text
+collections/** -text
+legacy/** -text
+_headers -text
+_routes.json -text
+_worker.js -text

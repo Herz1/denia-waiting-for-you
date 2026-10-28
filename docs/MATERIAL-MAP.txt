@@ -1,0 +1,261 @@
+达妮娅纪念馆 · 素材与原文映射表
+交付更新：2026-10-27
+依据：docs/import-manifest.json、当前页面/脚本/CSS、legacy/原HTML、原站图库元数据快照。
+本文件区分“原字节保留”“在新版正常使用”“历史存档”，不把列在数据清单里当作页面已展示。
+
+一、核对结果
+71个基线文件：63个非HTML文件仍在原路径；8个原HTML字节完整位于legacy/，原HTML入口路径改为新版。SHA-256核对：71/71一致。
+42张本地图片中，24个首页响应式候选均已纳入srcset（24/24）；相机/签名4件、蛋糕原图1件、图库示例6件继续使用。
+全部42个本地媒体均登记于memorial/material-data.js，并在archive.html经剧情确认后逐项提供原路径入口；包括原先未在主页面引用的7张原图/重复版本及全部24个响应式变体。
+旧13个assets JS与5个CSS继续同路径保存，不在新版主页面重复执行；这是有意保留历史构建，不是删除资源。
+legacy/不进入公开build，以免原日报/审核页面绕过新版剧情保护；完整源包与Git中仍保留旧HTML。
+
+二、可见内容迁移
+49条日报 → fanworks.html、daily/index.html → memorial/video.js。49份原封面data URI与原title/href/author/authorUrl/description/published/stats保留。
+原二创4条 → original-data.js.fanworks；其中日报与3个视频都有新版入口。原推荐说明、标签、收录时间仍作为数据保全；不将旧排序冒充新的人工推荐。
+原站246条去重字面文案 → archive.html → original-copy；默认封存，通关确认后按原字面值展示。原编译代码和旧HTML保留用于补充模板字符串/拼接文案核对。
+原5栏目 → 同名入口继续存在，并保留sections原数据；造梦者保留AI标记。
+原审核176条候选 → review.html → review-data.js；审核数据与初筛结果仍来自原页，不将初筛当作剧情安全审核。
+线上图库87图/67组 → gallery-data.js + docs/live-gallery-snapshot-20261027.json → gallery.html/dreamer.html。原src/thumb/组关系/标签保留；实际图像字节仍由原站提供。主代理已审87个成员缩略图与可见标题，不确定组默认封存；高清细字未逐字转写。
+署名现状：49条日报原作者、主页和原帖完整；67组线上画廊中 67 组作者为空、67 组原帖为空。3个本地示例原作者与原帖也为空。不能将“原站归档链接”标为原作者原帖。
+
+三、历史素材册状态
+已进入archive门控历史素材册 | assets/image-1f4a7ae89f965c1a.jpg | 字节重复于 assets/gallery-preview-DBxFLbBG.jpg
+已进入archive门控历史素材册 | assets/image-8a73aee88235e800.png | 字节重复于 assets/camera-arrow-DJ67sdcd.png
+已进入archive门控历史素材册 | assets/image-be90eefa53db170d.png | 字节重复于 assets/camera-emblem-BN63IOl3.png
+已进入archive门控历史素材册 | assets/image-c81c1280487428a8.png | 字节重复于 assets/camera-parameters-C8_ZMfAI.png
+已进入archive门控历史素材册 | assets/image-e58bc257b7b3153e.png | 字节重复于 assets/denia-signature-CEtRGKVD.png
+已进入archive门控历史素材册 | assets/ep-cover-0a6512f6143ead1e.webp | 原始封面版本
+已进入archive门控历史素材册 | backgrounds/ep-cover.jpg | 原始封面版本
+
+四、逐文件：原路径 → 新用途
+01. _headers
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：保留原静态资源缓存响应头配置，打包时保留。
+02. _routes.json
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：保留原Cloudflare Worker路由配置，打包时保留；托管环境是否执行仍按实际部署配置。
+03. _worker.js
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：保留原只读图库代理职责与路径；仍需真实 GALLERY_ARCHIVE_ORIGIN。新版相册引用原站真实媒体路径；此文件不代表远程图库数据库或图像已本地备份。
+04. assets/Fanworks-9XaC8F1t.js
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：原编译脚本/样式作为历史构建资源同路径保留；新版主要页面使用 memorial/ 的可维护代码，未把旧bundle继续加载等同于素材再利用。其内原数据/文案按上述新模块迁移。
+05. assets/Fanworks-DOcadX5J.js
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：原编译脚本/样式作为历史构建资源同路径保留；新版主要页面使用 memorial/ 的可维护代码，未把旧bundle继续加载等同于素材再利用。其内原数据/文案按上述新模块迁移。
+06. assets/Fanworks-ftuIpoX7.css
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：原编译脚本/样式作为历史构建资源同路径保留；新版主要页面使用 memorial/ 的可维护代码，未把旧bundle继续加载等同于素材再利用。其内原数据/文案按上述新模块迁移。
+07. assets/Gallery-BN5KDrAV.js
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：原编译脚本/样式作为历史构建资源同路径保留；新版主要页面使用 memorial/ 的可维护代码，未把旧bundle继续加载等同于素材再利用。其内原数据/文案按上述新模块迁移。
+08. assets/Gallery-CCtpU5_P.js
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：原编译脚本/样式作为历史构建资源同路径保留；新版主要页面使用 memorial/ 的可维护代码，未把旧bundle继续加载等同于素材再利用。其内原数据/文案按上述新模块迁移。
+09. assets/Gallery-CvI4aI7I.js
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：原编译脚本/样式作为历史构建资源同路径保留；新版主要页面使用 memorial/ 的可维护代码，未把旧bundle继续加载等同于素材再利用。其内原数据/文案按上述新模块迁移。
+10. assets/Gallery-EKI38csS.js
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：原编译脚本/样式作为历史构建资源同路径保留；新版主要页面使用 memorial/ 的可维护代码，未把旧bundle继续加载等同于素材再利用。其内原数据/文案按上述新模块迁移。
+11. assets/Gallery-XnlAuLOt.css
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：原编译脚本/样式作为历史构建资源同路径保留；新版主要页面使用 memorial/ 的可维护代码，未把旧bundle继续加载等同于素材再利用。其内原数据/文案按上述新模块迁移。
+12. assets/camera-arrow-DJ67sdcd.png
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页相册手记的相机箭头装饰。
+13. assets/camera-emblem-BN63IOl3.png
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页相册手记相机徽章。
+14. assets/camera-parameters-C8_ZMfAI.png
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页相册区域参数装饰，使用 camera-parameters 类。
+15. assets/denia-signature-CEtRGKVD.png
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页档案预览与关于页的原Denia签名装饰。
+16. assets/ep-cover-0a6512f6143ead1e.webp
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：原封面WebP完整版本。当前首屏使用响应式版本；本文件原路径保留，已在archive.html门控历史素材册提供打开入口。
+17. assets/ep-cover-1280-7bb20751846e8ae2.webp
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页<picture> 桌面响应式候选；保留原尺寸/格式，以srcset按需选择，不强制同时下载；历史素材册也保留该原文件入口。
+18. assets/ep-cover-1280-d8db82a3b5bd93a8.avif
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页<picture> 桌面响应式候选；保留原尺寸/格式，以srcset按需选择，不强制同时下载；历史素材册也保留该原文件入口。
+19. assets/ep-cover-1600-659c17b22f2ec281.avif
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页<picture> 桌面响应式候选；保留原尺寸/格式，以srcset按需选择，不强制同时下载；历史素材册也保留该原文件入口。
+20. assets/ep-cover-1600-6bd58c037d61b7f6.webp
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页<picture> 桌面响应式候选；保留原尺寸/格式，以srcset按需选择，不强制同时下载；历史素材册也保留该原文件入口。
+21. assets/ep-cover-1920-391422c29dad58c6.avif
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页<picture> 桌面响应式候选；保留原尺寸/格式，以srcset按需选择，不强制同时下载；历史素材册也保留该原文件入口。
+22. assets/ep-cover-1920-f54792e5e1a46187.webp
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页<picture> 桌面响应式候选；保留原尺寸/格式，以srcset按需选择，不强制同时下载；历史素材册也保留该原文件入口。
+23. assets/ep-cover-2560-d1f757061434f2bf.webp
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页<picture> 桌面响应式候选；保留原尺寸/格式，以srcset按需选择，不强制同时下载；历史素材册也保留该原文件入口。
+24. assets/ep-cover-2560-fc239525c7b8bf1d.avif
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页<picture> 桌面响应式候选；保留原尺寸/格式，以srcset按需选择，不强制同时下载；历史素材册也保留该原文件入口。
+25. assets/ep-cover-phone-1064-03d00ca3090b8ab1.webp
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页<picture> 窄屏手机响应式候选；保留原尺寸/格式，以srcset按需选择，不强制同时下载；历史素材册也保留该原文件入口。
+26. assets/ep-cover-phone-1064-0e51ae44ca82728c.avif
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页<picture> 窄屏手机响应式候选；保留原尺寸/格式，以srcset按需选择，不强制同时下载；历史素材册也保留该原文件入口。
+27. assets/ep-cover-phone-532-3f5de20e3c0e4b48.avif
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页<picture> 窄屏手机响应式候选；保留原尺寸/格式，以srcset按需选择，不强制同时下载；历史素材册也保留该原文件入口。
+28. assets/ep-cover-phone-532-98291e2f295d9d37.webp
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页<picture> 窄屏手机响应式候选；保留原尺寸/格式，以srcset按需选择，不强制同时下载；历史素材册也保留该原文件入口。
+29. assets/ep-cover-phone-665-7230ab66269ec693.webp
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页<picture> 窄屏手机响应式候选；保留原尺寸/格式，以srcset按需选择，不强制同时下载；历史素材册也保留该原文件入口。
+30. assets/ep-cover-phone-665-b9e812a995995cb8.avif
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页<picture> 窄屏手机响应式候选；保留原尺寸/格式，以srcset按需选择，不强制同时下载；历史素材册也保留该原文件入口。
+31. assets/ep-cover-phone-798-5d3b69f1a36063fc.webp
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页<picture> 窄屏手机响应式候选；保留原尺寸/格式，以srcset按需选择，不强制同时下载；历史素材册也保留该原文件入口。
+32. assets/ep-cover-phone-798-c2fd6d9844e6a2ee.avif
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页<picture> 窄屏手机响应式候选；保留原尺寸/格式，以srcset按需选择，不强制同时下载；历史素材册也保留该原文件入口。
+33. assets/ep-cover-wide-phone-1053-845b701a15bad5b2.avif
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页<picture> 横宽手机/平板响应式候选；保留原尺寸/格式，以srcset按需选择，不强制同时下载；历史素材册也保留该原文件入口。
+34. assets/ep-cover-wide-phone-1053-878b9bb1b585150b.webp
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页<picture> 横宽手机/平板响应式候选；保留原尺寸/格式，以srcset按需选择，不强制同时下载；历史素材册也保留该原文件入口。
+35. assets/ep-cover-wide-phone-1263-25b513e46dd71d43.webp
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页<picture> 横宽手机/平板响应式候选；保留原尺寸/格式，以srcset按需选择，不强制同时下载；历史素材册也保留该原文件入口。
+36. assets/ep-cover-wide-phone-1263-3bee6676d7803aaa.avif
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页<picture> 横宽手机/平板响应式候选；保留原尺寸/格式，以srcset按需选择，不强制同时下载；历史素材册也保留该原文件入口。
+37. assets/ep-cover-wide-phone-1684-50079cd40b2a51f9.webp
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页<picture> 横宽手机/平板响应式候选；保留原尺寸/格式，以srcset按需选择，不强制同时下载；历史素材册也保留该原文件入口。
+38. assets/ep-cover-wide-phone-1684-a90d72942c34d756.avif
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页<picture> 横宽手机/平板响应式候选；保留原尺寸/格式，以srcset按需选择，不强制同时下载；历史素材册也保留该原文件入口。
+39. assets/ep-cover-wide-phone-842-3f69bbffa3330148.webp
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页<picture> 横宽手机/平板响应式候选；保留原尺寸/格式，以srcset按需选择，不强制同时下载；历史素材册也保留该原文件入口。
+40. assets/ep-cover-wide-phone-842-7b8bbbb6d6533687.avif
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：首页<picture> 横宽手机/平板响应式候选；保留原尺寸/格式，以srcset按需选择，不强制同时下载；历史素材册也保留该原文件入口。
+41. assets/gallery-preview-DBxFLbBG.jpg
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：蛋糕互动原插画，在 showCake() 对话框继续展示；作者与原帖待补录。
+42. assets/image-1f4a7ae89f965c1a.jpg
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：与 assets/gallery-preview-DBxFLbBG.jpg 的SHA-256完全相同；重复原件保留原路径。已在建站足迹的门控历史素材册提供原路径链接，不增加首屏重复下载。
+43. assets/image-8a73aee88235e800.png
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：与 assets/camera-arrow-DJ67sdcd.png 的SHA-256完全相同；重复原件保留原路径。已在建站足迹的门控历史素材册提供原路径链接，不增加首屏重复下载。
+44. assets/image-be90eefa53db170d.png
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：与 assets/camera-emblem-BN63IOl3.png 的SHA-256完全相同；重复原件保留原路径。已在建站足迹的门控历史素材册提供原路径链接，不增加首屏重复下载。
+45. assets/image-c81c1280487428a8.png
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：与 assets/camera-parameters-C8_ZMfAI.png 的SHA-256完全相同；重复原件保留原路径。已在建站足迹的门控历史素材册提供原路径链接，不增加首屏重复下载。
+46. assets/image-e58bc257b7b3153e.png
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：与 assets/denia-signature-CEtRGKVD.png 的SHA-256完全相同；重复原件保留原路径。已在建站足迹的门控历史素材册提供原路径链接，不增加首屏重复下载。
+47. assets/main-4Hl6jBbF.css
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：原编译脚本/样式作为历史构建资源同路径保留；新版主要页面使用 memorial/ 的可维护代码，未把旧bundle继续加载等同于素材再利用。其内原数据/文案按上述新模块迁移。
+48. assets/main-B-e5tOF-.js
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：原编译脚本/样式作为历史构建资源同路径保留；新版主要页面使用 memorial/ 的可维护代码，未把旧bundle继续加载等同于素材再利用。其内原数据/文案按上述新模块迁移。
+49. assets/main-B3figriV.js
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：原编译脚本/样式作为历史构建资源同路径保留；新版主要页面使用 memorial/ 的可维护代码，未把旧bundle继续加载等同于素材再利用。其内原数据/文案按上述新模块迁移。
+50. assets/main-Bu7xU7kz.js
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：原编译脚本/样式作为历史构建资源同路径保留；新版主要页面使用 memorial/ 的可维护代码，未把旧bundle继续加载等同于素材再利用。其内原数据/文案按上述新模块迁移。
+51. assets/main-ByoURVWF.js
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：原编译脚本/样式作为历史构建资源同路径保留；新版主要页面使用 memorial/ 的可维护代码，未把旧bundle继续加载等同于素材再利用。其内原数据/文案按上述新模块迁移。
+52. assets/main-CjR34y8G.js
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：原编译脚本/样式作为历史构建资源同路径保留；新版主要页面使用 memorial/ 的可维护代码，未把旧bundle继续加载等同于素材再利用。其内原数据/文案按上述新模块迁移。
+53. assets/main-DjHvMW_W.css
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：原编译脚本/样式作为历史构建资源同路径保留；新版主要页面使用 memorial/ 的可维护代码，未把旧bundle继续加载等同于素材再利用。其内原数据/文案按上述新模块迁移。
+54. assets/main-kb1JgxCS-perf-640b33a46d9bc3cd.js
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：原编译脚本/样式作为历史构建资源同路径保留；新版主要页面使用 memorial/ 的可维护代码，未把旧bundle继续加载等同于素材再利用。其内原数据/文案按上述新模块迁移。
+55. assets/main-kb1JgxCS.js
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：原编译脚本/样式作为历史构建资源同路径保留；新版主要页面使用 memorial/ 的可维护代码，未把旧bundle继续加载等同于素材再利用。其内原数据/文案按上述新模块迁移。
+56. assets/main-w_ri9Cg0.css
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：原编译脚本/样式作为历史构建资源同路径保留；新版主要页面使用 memorial/ 的可维护代码，未把旧bundle继续加载等同于素材再利用。其内原数据/文案按上述新模块迁移。
+57. backgrounds/ep-cover.jpg
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：原始背景JPEG。当前首屏使用原响应式衍生图；本文件原路径保留，已在archive.html门控历史素材册提供打开入口。
+58. daily/index.html
+    状态：旧HTML完整归档，新入口沿用原路径；SHA-256核对：一致。
+    新用途：原路径继续日报，../ 资源基址接入49视频组件；49封面data URI与原文/署名/作者主页/原帖/统计完整迁入 original-data.js；旧完整HTML在 legacy/daily/index.html。
+59. dreamer.html
+    状态：旧HTML完整归档，新入口沿用原路径；SHA-256核对：一致。
+    新用途：原路径继续AI创作专栏，读取原站AI分类并显式标AI；旧HTML在 legacy/dreamer.html。
+60. fanworks.html
+    状态：旧HTML完整归档，新入口沿用原路径；SHA-256核对：一致。
+    新用途：原路径成为二创放映室，接入49视频；旧4条初始条目完整存于 original-data.js.fanworks，其中3视频也在49视频中；旧HTML在 legacy/fanworks.html。
+61. friends.html
+    状态：旧HTML完整归档，新入口沿用原路径；SHA-256核对：一致。
+    新用途：原路径扩展为关于这里/作者与素材致谢/下架联系/友邻书签；旧栏目文案存入 originalCopy；旧HTML在 legacy/friends.html。
+62. gallery-examples/ai-image.webp
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：AI分类原示例；gallery-data.js.examples → renderExamples() → 书签缩略图/灯箱原图。原作者/原帖字段为空，不捏造署名。
+63. gallery-examples/ai-thumb.webp
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：AI分类原示例；gallery-data.js.examples → renderExamples() → 书签缩略图/灯箱原图。原作者/原帖字段为空，不捏造署名。
+64. gallery-examples/drawing-image.webp
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：手绘分类原示例；gallery-data.js.examples → renderExamples() → 书签缩略图/灯箱原图。手绘原图另用于首页与学院档案。原作者/原帖字段为空，不捏造署名。
+65. gallery-examples/drawing-thumb.webp
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：手绘分类原示例；gallery-data.js.examples → renderExamples() → 书签缩略图/灯箱原图。原作者/原帖字段为空，不捏造署名。
+66. gallery-examples/photo-image.webp
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：摄影分类（默认封存）原示例；gallery-data.js.examples → renderExamples() → 书签缩略图/灯箱原图。原作者/原帖字段为空，不捏造署名。
+67. gallery-examples/photo-thumb.webp
+    状态：原路径/原字节保留；SHA-256核对：一致。
+    新用途：摄影分类（默认封存）原示例；gallery-data.js.examples → renderExamples() → 书签缩略图/灯箱原图。原作者/原帖字段为空，不捏造署名。
+68. gallery.html
+    状态：旧HTML完整归档，新入口沿用原路径；SHA-256核对：一致。
+    新用途：原路径成为新版画廊；87张线上图片/67组元数据、3个本地分类示例、灯箱/收藏/筛选与署名缺失提示；旧HTML在 legacy/gallery.html。
+69. index.html
+    状态：旧HTML完整归档，新入口沿用原路径；SHA-256核对：一致。
+    新用途：原路径成为新版首页；继承原Logo/До свидания/Dear Denia/等待天数/同一封面/蛋糕入口；旧完整HTML在 legacy/index.html。
+70. interactive.html
+    状态：旧HTML完整归档，新入口沿用原路径；SHA-256核对：一致。
+    新用途：原路径扩展为课间互动/本地心愿/蛋糕/原站桌宠接入；旧栏目原文保留；旧HTML在 legacy/interactive.html。
+71. review.html
+    状态：旧HTML完整归档，新入口沿用原路径；SHA-256核对：一致。
+    新用途：原路径先过剧情确认再以srcdoc载入原176条候选审核HTML；选择/备注/导入导出原逻辑保留在 review-data.js；旧完整HTML在 legacy/review.html。
+
+五、新增资源不冒充原素材
+memorial/brand.svg/favicon.svg等界面向量装饰属于站点界面，不是新生成角色素材。
+memorial/profile-data.js为核验资料；官方引文、站点原创寄语、待核对字段分别标注。
+新增文本与UI不替换原图片；相册缺图应显示明确失败状态，不用随机图或AI生成图补位。
+
+六、最终接口与交互补充
+视频组件与根页面base/isUnlocked/requestUnlock/toast契约匹配；daily使用../。封面DIV/子IMG、标题BUTTON与封存卡高度的CSS匹配已修正。
+本地file://资源解析已区分本地file/data/blob与原站图库API，不再把file URL拼接到远程域。
+原生关闭视频对话框后的内部状态清理已加入，refresh在重绘前也检查已关闭对话框。
+心愿新增“复制备份文本”“粘贴备份文本”作为JSON下载/文件选择的备用路径；留声卡先呈现PNG预览对话框，再由用户下载、长按或右键保存。
+
+七、桌宠增量兼容
+memorial/pet.js是新增本地兼容控制层；新域或原companion.js加载失败时仍使用https://preview.daniya.cc/pet/denia.webp原精灵图运行九种动作，不替换人物素材。主代理已观察到角色/动作下拉与减少动效暂停。聊天、选图、表情包、朗读留在原pet-preview.html；原聊天离线不由兼容层伪装恢复。原精灵图未包含于71文件本地基线。
+
+
+2026-10-27归并补记：中日官方角色介绍MP3已从余温旧站恢复并通过播放测试。其余边界按CONSOLIDATION-20261027.txt。新增旧站收藏册和本机记录入口，不删除旧版本或替换原始素材。
